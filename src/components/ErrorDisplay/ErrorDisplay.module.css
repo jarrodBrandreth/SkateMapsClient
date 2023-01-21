@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  background-color: rgb(205, 52, 57);
+  color: white;
+  z-index: 5001;
+}
+
+.error_icon {
+  font-size: 30px;
+  color: inherit;
+}
+
+.msg {
+  margin: 0 16px;
+  color: inherit;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.close_button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}

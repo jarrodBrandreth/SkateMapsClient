@@ -1,0 +1,90 @@
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 40px;
+  padding: 6px 20px;
+  background-color: rgb(14, 117, 49);
+  color: white;
+  z-index: 2000;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+}
+
+.logo svg {
+  border: 2px solid white;
+  border-radius: 2px;
+  padding: 1px;
+  color: white;
+}
+
+.title {
+  position: relative;
+  top: 6px;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.nav {
+  background-color: inherit;
+  z-index: inherit;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.nav li {
+  font-weight: 600;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.nav a {
+  color: inherit;
+  position: relative;
+  top: 4px;
+}
+.nav li.on_page {
+  opacity: 1;
+}
+
+.nav li.on_page a {
+  border-bottom: 2px solid white;
+  top: 0px;
+  transition: top 0.25s ease;
+}
+
+@media (hover: hover) {
+  nav li:hover {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 12px;
+  }
+
+  .nav ul {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .nav a {
+    top: 0px;
+  }
+}

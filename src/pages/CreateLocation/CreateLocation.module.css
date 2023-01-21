@@ -1,0 +1,12 @@
+.page_heading span {
+  color: rgb(14, 117, 49);
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+.page_heading span::before {
+  content: '[ ';
+}
+
+.page_heading span:after {
+  content: ' ]';
+}

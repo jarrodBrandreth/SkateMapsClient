@@ -1,0 +1,151 @@
+.form_style {
+  width: min(460px, 100%);
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px 32px;
+  display: grid;
+  gap: 16px 12px;
+  grid-template-areas:
+    'title title'
+    'borough neighborhood'
+    'category .'
+    'use_map use_map'
+    'latitude longitude'
+    'image_section image_section'
+    'rating rating'
+    'description description'
+    'preview preview';
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2px;
+}
+
+.field label {
+  font-weight: 500;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  resize: none;
+  font-size: 0.9rem;
+}
+
+.title.field {
+  grid-area: title;
+}
+
+.borough.field {
+  grid-area: borough;
+}
+
+.neighborhood.field {
+  grid-area: neighborhood;
+}
+
+.category.field {
+  grid-area: category;
+}
+
+button.use_map {
+  grid-area: use_map;
+  width: max-content;
+  padding: 6px;
+  font-weight: 600;
+  background-color: #0e7531;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.latitude.field {
+  grid-area: latitude;
+}
+
+.longitude.field {
+  grid-area: longitude;
+}
+
+.image_section {
+  grid-area: image_section;
+}
+
+.add_image_url {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+}
+
+.images {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.image_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: rgb(233, 230, 225);
+}
+
+.image_container .url {
+  /* line-height: 1.15; */
+  word-break: break-word;
+}
+
+.image_container button {
+  background-color: transparent;
+}
+
+.rating {
+  grid-area: rating;
+}
+
+.rating > * {
+  width: max-content;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.description.field {
+  grid-area: description;
+}
+
+.preview {
+  grid-area: preview;
+  width: max-content;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(14, 117, 49);
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 450px) {
+  .form_style {
+    padding: 20px;
+  }
+}

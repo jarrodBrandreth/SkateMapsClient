@@ -1,0 +1,51 @@
+.top_section {
+  position: relative;
+  padding: 8px;
+  background-color: aliceblue;
+}
+
+.coordinates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  z-index: 5500;
+}
+
+.coordinate {
+  font-weight: 300;
+}
+
+/* lat lng title */
+.coordinate .title {
+  font-weight: 500;
+  margin-right: 4px;
+  font-size: 0.9rem;
+}
+
+.top_section .cancel {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: #de5307;
+  color: white;
+  padding: 2px  6px;
+  
+}
+
+.top_section .use_coords {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: green;
+  color: white;
+  padding: 2px  6px;
+}
+
+@media (max-width: 640px) {
+  .coordinates {
+    margin-top: 32px;
+  }
+  .top_section .use_coords {
+  }
+}

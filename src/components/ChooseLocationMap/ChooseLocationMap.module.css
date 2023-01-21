@@ -1,0 +1,15 @@
+.search_bar {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(360px, 80%);
+  z-index: 900;
+}
+
+@media (max-width: 480px) {
+  .search_bar {
+    left: 58px;
+    transform: none;
+  }
+}

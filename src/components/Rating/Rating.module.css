@@ -1,0 +1,26 @@
+.container {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.star_container {
+  background-color: transparent;
+  border: none;
+}
+
+.star {
+  fill: #757575;
+}
+.star.empty {
+  fill: transparent;
+}
+
+@media (hover:hover) {
+  .container:hover button .star {
+    fill: #757575;
+  }
+
+  .container button:hover ~ button .star {
+    fill: transparent;
+  }
+}

@@ -1,0 +1,40 @@
+.container {
+  --light-gray: rgb(210, 214, 221);
+  --light-green: rgb(106, 185, 53);
+  width: max-content;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+.line_background {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--light-gray);
+  z-index: 1;
+}
+
+.icon {
+  color: white;
+  padding: 4px;
+  border-radius: 50%;
+  z-index: 2;
+  background-color: var(--light-green);
+  font-size: 36px;
+}
+
+.icon.incomplete {
+  background-color: var(--light-gray);
+  color: white;
+}
+
+@media (max-width: 540px) {
+  .icon {
+    font-size: 28px;
+  }
+}
