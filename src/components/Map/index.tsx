@@ -1,5 +1,6 @@
 import { MapContainer, TileLayer } from 'react-leaflet';
 import { LatLngExpression } from 'leaflet';
+import { latitudeMin, latitudeMax, longitudeMin, longitudeMax } from '../../globals';
 
 interface MapProps {
   children: React.ReactNode;
@@ -14,8 +15,8 @@ export function Map({ center, zoom, children }: MapProps) {
       minZoom={11}
       zoom={zoom}
       maxBounds={[
-        [40.976443, -74.384081],
-        [40.439284, -73.792193],
+        [latitudeMax, longitudeMin],
+        [latitudeMin, longitudeMax],
       ]}
       scrollWheelZoom={false}
     >

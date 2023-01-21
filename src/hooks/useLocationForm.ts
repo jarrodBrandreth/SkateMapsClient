@@ -1,4 +1,5 @@
 import { useReducer } from 'react';
+import { locationToForm } from '../helperFunctions/locationToForm';
 import { LocationFormType, LocationFormAction, LocationType } from '../types/types';
 
 const formReducer = (state: LocationFormType, action: LocationFormAction): LocationFormType => {
@@ -29,6 +30,7 @@ const formReducer = (state: LocationFormType, action: LocationFormAction): Locat
         neighborhood: action.payload,
       };
     case 'latitude':
+   
       return {
         ...state,
         coordinates: {
@@ -37,6 +39,7 @@ const formReducer = (state: LocationFormType, action: LocationFormAction): Locat
         },
       };
     case 'longitude':
+ 
       return {
         ...state,
         coordinates: {
@@ -47,10 +50,7 @@ const formReducer = (state: LocationFormType, action: LocationFormAction): Locat
     case 'update coordinates':
       return {
         ...state,
-        coordinates: {
-          lat: action.payload.lat,
-          lng: action.payload.lng,
-        },
+        coordinates: action.payload,
       };
     case 'add image url':
       return {
@@ -79,11 +79,8 @@ const formReducer = (state: LocationFormType, action: LocationFormAction): Locat
   }
 };
 
-export const useLocationForm = (location: LocationType) => {
-  const [formState, formDispatch] = useReducer(formReducer, {
-    ...location,
-    add_image_url: '',
-  });
+export const useLocationForm = (location: LocationType|null) => {
+  const [formState, formDispatch] = useReducer(formReducer,locationToForm(location));
 
   return { formState, formDispatch };
 };

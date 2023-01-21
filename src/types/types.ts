@@ -33,6 +33,11 @@ export type LocationPinPosition = {
   lng: number;
 };
 
+export type LocationFormCoordsType = {
+  lat: string;
+  lng: string;
+};
+
 export type LocationFormType = {
   _id: string;
   title: string;
@@ -41,8 +46,8 @@ export type LocationFormType = {
   borough: string;
   neighborhood: string;
   coordinates: {
-    lat: number;
-    lng: number;
+    lat: string;
+    lng: string;
   };
   images: string[];
   rating: number;
@@ -57,20 +62,22 @@ export type LocationFormAction =
         | 'description'
         | 'borough'
         | 'neighborhood'
+        | 'longitude'
+        | 'latitude'
         | 'add image url'
         | 'add image'
         | 'remove image';
       payload: string;
     }
   | {
-      type: 'rating' | 'longitude' | 'latitude';
+      type: 'rating';
       payload: number;
     }
   | {
       type: 'update coordinates';
       payload: {
-        lat: number;
-        lng: number;
+        lat: string;
+        lng: string;
       };
     };
 

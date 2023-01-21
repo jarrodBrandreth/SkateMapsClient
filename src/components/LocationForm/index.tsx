@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocationForm } from '../../hooks/useLocationForm';
 import { MdAddCircleOutline, MdArrowForward, MdPushPin } from 'react-icons/md';
 import { FaRegTrashAlt } from 'react-icons/fa';
@@ -6,8 +6,10 @@ import { LocationPinPosition, LocationType } from '../../types/types';
 import { Rating } from '../Rating';
 import { ChooseCoordsMap } from '../ChooseCoordsMap';
 import { useOnOff } from '../../hooks/useOnOff';
-import { getEmptyLocation } from '../../helperFunctions/getEmptyLocation';
 import { Button } from '../Button';
+import { latitudeMin, latitudeMax, longitudeMin, longitudeMax } from '../../globals';
+import { validateCoords } from '../../helperFunctions/validateCoords';
+import { ErrorDisplay } from '../ErrorDisplay';
 import styles from './LocationForm.module.css';
 
 interface LocationFormProps {
@@ -16,23 +18,39 @@ interface LocationFormProps {
 }
 
 export function LocationForm({ location, updateLocation }: LocationFormProps) {
-  const { formState, formDispatch } = useLocationForm(location ?? getEmptyLocation());
+  const { formState, formDispatch } = useLocationForm(location);
   const { isOn: showCoordsMap, turnOn: toCoordsMap, turnOff: backToForm } = useOnOff(false);
+  const [error, setError] = useState<false | string>(false);
 
   const updateWithCoords = (coords: LocationPinPosition) => {
-    formDispatch({ type: 'update coordinates', payload: coords });
+    const payload = {
+      lat: coords.lat.toString(),
+      lng: coords.lng.toString(),
+    };
+    formDispatch({ type: 'update coordinates', payload: payload });
     backToForm();
   };
 
   const preview = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const latitude = parseFloat(formState.coordinates.lat);
+    const longitude = parseFloat(formState.coordinates.lng);
+    const validate = validateCoords(latitude, longitude);
+
+    if (validate.error) {
+      setError(validate.error);
+      return;
+    }
     const newLocation: LocationType = {
       _id: formState._id,
       title: formState.title,
       borough: formState.borough,
       neighborhood: formState.neighborhood,
       category: formState.category,
-      coordinates: formState.coordinates,
+      coordinates: {
+        lat: latitude,
+        lng: longitude,
+      },
       rating: formState.rating,
       description: formState.description,
       images: formState.images,
@@ -114,29 +132,35 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
             <div className={`${styles.field} ${styles.latitude}`}>
               <label htmlFor="latitude">Latitude</label>
               <input
-                onChange={(e) =>
-                  formDispatch({ type: 'latitude', payload: e.target.valueAsNumber })
-                }
+                onChange={(e) => formDispatch({ type: 'latitude', payload: e.target.value })}
                 value={formState.coordinates.lat}
                 id="latitude"
                 name="latitude"
-                type="number"
+                type="text"
+                pattern="^[0-9]{2}[.][0-9]+"
+                title={'floating point and in range'}
                 required
               />
+              <div className={styles.coords_range}>{`*min ${latitudeMin.toFixed(
+                2,
+              )}, max ${latitudeMax.toFixed(2)}`}</div>
             </div>
 
             <div className={`${styles.field} ${styles.longitude}`}>
               <label htmlFor="longitude">Longitude</label>
               <input
-                onChange={(e) =>
-                  formDispatch({ type: 'longitude', payload: e.target.valueAsNumber })
-                }
+                onChange={(e) => formDispatch({ type: 'longitude', payload: e.target.value })}
                 value={formState.coordinates.lng}
                 id="longitude"
                 name="longitude"
-                type="number"
+                type="text"
+                pattern="^[-][0-9]{2}[.][0-9]+"
+                title={'floating point starting with - and in range'}
                 required
               />
+              <div className={styles.coords_range}>{`*min ${longitudeMin.toFixed(
+                2,
+              )}, max ${longitudeMax.toFixed(2)}`}</div>
             </div>
 
             <div className={styles.image_section}>
@@ -203,6 +227,7 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
                 id="description"
                 name="description"
                 rows={6}
+                required
               />
             </div>
 
@@ -211,6 +236,7 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
               <MdArrowForward size="22px" />
             </button>
           </fieldset>
+          {error && <ErrorDisplay errorMessage={error} closeErrorDisplay={() => setError(false)} />}
         </form>
       )}
     </section>

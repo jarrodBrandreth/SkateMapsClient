@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import { Map } from '../Map';
 import { DraggablePin } from '../DraggablePin';
-import { LocationPinPosition } from '../../types/types';
+import { LocationFormCoordsType, LocationPinPosition } from '../../types/types';
 import { Button } from '../Button';
 import { MdPushPin, MdArrowBack } from 'react-icons/md';
-import { hasCoords } from '../../helperFunctions/hasCoords';
+import { checkCoords } from '../../helperFunctions/checkCoords';
 import styles from './ChooseCoordsMap.module.css';
 
 interface ChooseCoordsProps {
-  previousLocation: LocationPinPosition;
+  previousLocation: LocationFormCoordsType;
   cancel: () => void;
   updateWithCoords: (coords: LocationPinPosition) => void;
 }
 
 export function ChooseCoordsMap({ previousLocation, updateWithCoords, cancel }: ChooseCoordsProps) {
-  const [coords, setCoords] = useState<LocationPinPosition>(
-    hasCoords(previousLocation) ? previousLocation : { lat: 40.735036, lng: -73.991531 },
-  );
+  const [coords, setCoords] = useState<LocationPinPosition>(checkCoords(previousLocation));
 
   return (
     <div className={styles.container}>
@@ -44,14 +42,7 @@ export function ChooseCoordsMap({ previousLocation, updateWithCoords, cancel }: 
           <MdPushPin size="20px" /> Use Coords
         </Button>
       </section>
-      <Map
-        center={
-          hasCoords(previousLocation)
-            ? [previousLocation.lat, previousLocation.lng]
-            : [40.735036, -73.991531]
-        }
-        zoom={17}
-      >
+      <Map center={[coords.lat, coords.lng]} zoom={17}>
         <DraggablePin coords={coords} setCoords={setCoords} />
       </Map>
     </div>

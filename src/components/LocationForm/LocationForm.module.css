@@ -75,6 +75,11 @@ button.use_map {
   grid-area: longitude;
 }
 
+.field .coords_range {
+  font-size: 0.7rem;
+  padding-left: 4px;
+}
+
 .image_section {
   grid-area: image_section;
 }
@@ -104,7 +109,6 @@ button.use_map {
 }
 
 .image_container .url {
-  /* line-height: 1.15; */
   word-break: break-word;
 }
 
