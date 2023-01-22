@@ -5,7 +5,6 @@ import { SearchBar } from '../SearchBar';
 import { DetailsDrawer } from '../DetailsDrawer';
 import { LocationType } from '../../types/types';
 import { applyFilters } from '../../helperFunctions/applyFilters';
-import styles from './LocationsMap.module.css';
 
 interface LocationsMapProps {
   locations: LocationType[];
@@ -24,11 +23,7 @@ export function LocationsMap({ locations }: LocationsMapProps) {
   return (
     <div>
       <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
-        <SearchBar
-          className={styles.search_bar}
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         <DetailsDrawer location={currentLocation} />
         {locations
           .filter((location) => applyFilters(location, searchValue, selectedBorough))

@@ -1,5 +1,14 @@
+.container {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  z-index: 400;
+}
+
 .search_bar {
   position: relative;
+  width: min(260px, 90%);
+  margin: auto;
 }
 
 .search_bar label {

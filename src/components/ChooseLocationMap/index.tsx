@@ -43,11 +43,7 @@ export function ChooseLocationMap({
         <Button onClick={callAction}>{chooseLocation.name}</Button>
       </div>
       <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
-        <SearchBar
-          className={styles.search_bar}
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         <DetailsDrawer location={currentLocation} />
         {locations
           .filter((location) => applyFilters(location, searchValue, selectedBorough))
