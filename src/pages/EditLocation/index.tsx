@@ -9,7 +9,7 @@ import { LocationPreview } from '../../components/LocationPreview';
 import { Success } from '../../components/Success';
 import { ErrorDisplay } from '../../components/ErrorDisplay';
 import { useEditLocation } from '../../hooks/useEditLocation';
-import styles from './EditLocation.module.css';
+import styles from '../../styles/PageStyles.module.css';
 
 export function EditLocation() {
   const { locations } = useLocationsContext();
@@ -53,14 +53,16 @@ export function EditLocation() {
 
   return (
     <section>
-      <h1 className={styles.page_heading}>
-        <span>Admin</span> Edit Location
-      </h1>
-      <StepsDisplay
-        steps={['choose location', 'form', 'preview', 'success']}
-        currentStep={step}
-        Icons={[MdNotListedLocation, MdDescription, MdPreview, MdTask]}
-      />
+      <header className={styles.page_header}>
+        <h1 className={styles.page_heading}>
+          <span className={styles.decorative}>Admin</span> Edit Location
+        </h1>
+        <StepsDisplay
+          steps={['choose location', 'form', 'preview', 'success']}
+          currentStep={step}
+          Icons={[MdNotListedLocation, MdDescription, MdPreview, MdTask]}
+        />
+      </header>
 
       {step === 'choose location' && (
         <ChooseLocationMap

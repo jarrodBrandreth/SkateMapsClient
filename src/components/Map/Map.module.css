@@ -1,0 +1,15 @@
+.map_container {
+  margin: auto;
+  width: min(600px, 100%);
+  padding: 16px;
+  background-color: #f6f7f8;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+}
+
+@media (max-width: 560px) {
+  .map_container {
+    aspect-ratio: unset;
+    height: 400px;
+  }
+}

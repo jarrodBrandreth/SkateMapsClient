@@ -1,5 +1,6 @@
 .main {
   flex-grow: 1;
-  background-color: rgb(233, 230, 225);
+  background-color: white;
+  color: var(--dark-grey);
   position: relative;
 }

@@ -7,7 +7,7 @@ import { ChooseLocationMap } from '../../components/ChooseLocationMap';
 import { Success } from '../../components/Success';
 import { ErrorDisplay } from '../../components/ErrorDisplay';
 import { useDeleteLocation } from '../../hooks/useDeleteLocation';
-import styles from './DeleteLocation.module.css';
+import styles from '../../styles/PageStyles.module.css';
 
 export function DeleteLocation() {
   const { locations } = useLocationsContext();
@@ -34,14 +34,16 @@ export function DeleteLocation() {
 
   return (
     <section>
-      <h1 className={styles.page_heading}>
-        <span>Admin</span> Delete Location
-      </h1>
-      <StepsDisplay
-        steps={['choose location', 'success']}
-        currentStep={step}
-        Icons={[MdNotListedLocation, MdTask]}
-      />
+      <header className={styles.page_header}>
+        <h1 className={styles.page_heading}>
+          <span className={styles.decorative}>Admin</span> Delete Location
+        </h1>
+        <StepsDisplay
+          steps={['choose location', 'success']}
+          currentStep={step}
+          Icons={[MdNotListedLocation, MdTask]}
+        />
+      </header>
 
       {step === 'choose location' && (
         <ChooseLocationMap

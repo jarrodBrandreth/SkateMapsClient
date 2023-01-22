@@ -9,7 +9,7 @@ import { LocationPreview } from '../../components/LocationPreview';
 import { Success } from '../../components/Success';
 import { useEditMyMapLocation } from '../../hooks/useEditMyMapLocation';
 import { ErrorDisplay } from '../../components/ErrorDisplay';
-import styles from '../EditLocation/EditLocation.module.css';
+import styles from '../../styles/PageStyles.module.css';
 
 export function EditMyMapLocation() {
   const { myMapLocations } = useLocationsContext();
@@ -51,14 +51,16 @@ export function EditMyMapLocation() {
 
   return (
     <section>
-      <h1 className={styles.page_heading}>
-        <span>My Map</span> Edit Location
-      </h1>
-      <StepsDisplay
-        steps={['choose location', 'form', 'preview', 'success']}
-        currentStep={step}
-        Icons={[MdNotListedLocation, MdDescription, MdPreview, MdTask]}
-      />
+      <header className={styles.page_header}>
+        <h1 className={styles.page_heading}>
+          <span className={styles.decorative}>My Map</span> Edit Location
+        </h1>
+        <StepsDisplay
+          steps={['choose location', 'form', 'preview', 'success']}
+          currentStep={step}
+          Icons={[MdNotListedLocation, MdDescription, MdPreview, MdTask]}
+        />
+      </header>
 
       {step === 'choose location' && (
         <ChooseLocationMap

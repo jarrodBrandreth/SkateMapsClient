@@ -1,4 +1,3 @@
-
 @import '~sanitize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap');
 
@@ -19,6 +18,10 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --dark-green: rgb(14, 117, 49);
+  --light-green: rgb(106, 185, 53);
+  --dark-grey: rgb(89, 89, 89);
+  --light-gray: rgb(210, 214, 221);
 }
 
 a {
@@ -32,10 +35,17 @@ button {
 }
 
 .leaflet-container {
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 4px;
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* controls zoom panel */
+.leaflet-top.leaflet-left {
+  top: unset;
+  left: unset;
+  bottom: 34px;
+  right: 10px;
 }
 
 .leaflet-popup-content {

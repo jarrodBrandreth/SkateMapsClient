@@ -8,7 +8,7 @@
   color: white;
 }
 
-@media (max-width: 476px) {
+@media (max-width: 560px) {
   .footer {
     margin-bottom: 48px;
     background-color: #228b22;

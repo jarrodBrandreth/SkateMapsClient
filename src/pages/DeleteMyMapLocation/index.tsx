@@ -6,7 +6,7 @@ import { MdNotListedLocation, MdTask } from 'react-icons/md';
 import { ChooseLocationMap } from '../../components/ChooseLocationMap';
 import { Success } from '../../components/Success';
 import { useDeleteMyMapLocation } from '../../hooks/useDeleteMyMapLocation';
-import styles from '../DeleteLocation/DeleteLocation.module.css';
+import styles from '../../styles/PageStyles.module.css';
 
 export function DeleteMyMapLocation() {
   const { myMapLocations } = useLocationsContext();
@@ -24,14 +24,16 @@ export function DeleteMyMapLocation() {
 
   return (
     <section>
-      <h1 className={styles.page_heading}>
-        <span>My Map</span> Delete Location
-      </h1>
-      <StepsDisplay
-        steps={['choose location', 'success']}
-        currentStep={step}
-        Icons={[MdNotListedLocation, MdTask]}
-      />
+      <header className={styles.page_header}>
+        <h1 className={styles.page_heading}>
+          <span className={styles.decorative}>My Map</span> Delete Location
+        </h1>
+        <StepsDisplay
+          steps={['choose location', 'success']}
+          currentStep={step}
+          Icons={[MdNotListedLocation, MdTask]}
+        />
+      </header>
 
       {step === 'choose location' && (
         <ChooseLocationMap

@@ -7,7 +7,7 @@ export function Header() {
   const location = useLocation();
   const myMapString = 'my-map';
   return (
-    <header>
+    <header className={styles.site_header}>
       <div className={styles.logo}>
         <Link to="/">
           <MdApartment size="30px" />

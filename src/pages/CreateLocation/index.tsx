@@ -7,7 +7,7 @@ import { StepsDisplay } from '../../components/StepsDisplay';
 import { Success } from '../../components/Success';
 import { useCreateLocation } from '../../hooks/useCreateLocation';
 import { CreateLocationSteps, LocationType } from '../../types/types';
-import styles from './CreateLocation.module.css';
+import styles from '../../styles/PageStyles.module.css';
 
 export function CreateLocation() {
   const [step, setStep] = useState<CreateLocationSteps>('form');
@@ -48,14 +48,16 @@ export function CreateLocation() {
 
   return (
     <section>
-      <h1 className={styles.page_heading}>
-        <span>Admin</span> Create Location
-      </h1>
-      <StepsDisplay
-        steps={['form', 'preview', 'success']}
-        currentStep={step}
-        Icons={[MdDescription, MdPreview, MdTask]}
-      />
+      <header className={styles.page_header}>
+        <h1 className={styles.page_heading}>
+          <span className={styles.decorative}>Admin</span> Create Location
+        </h1>
+        <StepsDisplay
+          steps={['form', 'preview', 'success']}
+          currentStep={step}
+          Icons={[MdDescription, MdPreview, MdTask]}
+        />
+      </header>
 
       {step === 'form' && <LocationForm location={location} updateLocation={updateLocation} />}
       {step === 'preview' && location && (

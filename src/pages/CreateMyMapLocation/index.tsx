@@ -7,7 +7,7 @@ import { StepsDisplay } from '../../components/StepsDisplay';
 import { Success } from '../../components/Success';
 import { useCreateMyMapLocation } from '../../hooks/useCreateMyMapLocation';
 import { CreateLocationSteps, LocationType } from '../../types/types';
-import styles from '../CreateLocation/CreateLocation.module.css';
+import styles from '../../styles/PageStyles.module.css';
 
 export function CreateMyMapLocation() {
   const [step, setStep] = useState<CreateLocationSteps>('form');
@@ -49,14 +49,16 @@ export function CreateMyMapLocation() {
 
   return (
     <section>
-      <h1 className={styles.page_heading}>
-        <span>My Map</span> Create Location
-      </h1>
-      <StepsDisplay
-        steps={['form', 'preview', 'success']}
-        currentStep={step}
-        Icons={[MdDescription, MdPreview, MdTask]}
-      />
+      <header className={styles.page_header}>
+        <h1 className={styles.page_heading}>
+          <span className={styles.decorative}>My Map</span> Create Location
+        </h1>
+        <StepsDisplay
+          steps={['form', 'preview', 'success']}
+          currentStep={step}
+          Icons={[MdDescription, MdPreview, MdTask]}
+        />
+      </header>
 
       {step === 'form' && <LocationForm location={location} updateLocation={updateLocation} />}
       {step === 'preview' && location && (

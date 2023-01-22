@@ -1,12 +1,12 @@
-header {
+.site_header {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   gap: 40px;
-  padding: 6px 20px;
+  padding: 8px 18px;
   background-color: rgb(14, 117, 49);
   color: white;
-  z-index: 2000;
+  z-index: 2500;
 }
 
 .logo {
@@ -28,7 +28,7 @@ header {
   position: relative;
   top: 6px;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .nav {

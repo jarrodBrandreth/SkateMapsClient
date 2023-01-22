@@ -1,0 +1,49 @@
+.page_header {
+  height: 80px;
+  margin-bottom: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.page_header .description {
+  font-weight: 500;
+}
+
+h1.page_heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.decorative {
+  color: var(--dark-green);
+}
+
+.decorative::before {
+  content: '[ ';
+}
+
+.decorative::after {
+  content: ' ]';
+}
+
+.page_heading span {
+  font-size: 1rem;
+}
+
+@media (max-width: 560px) {
+  .page_header {
+    position: sticky;
+    top: 44px;
+    background-clip: padding-box;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    z-index: 2499;
+  }
+
+  .page_header.locations_page {
+    top:0px;
+  }
+}
