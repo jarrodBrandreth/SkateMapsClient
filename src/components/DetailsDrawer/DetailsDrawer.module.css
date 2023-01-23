@@ -39,7 +39,7 @@
   align-items: flex-end;
   gap: 6px;
   padding: 8px;
-  background-color: rgb(14, 117, 49);
+  background-color: var(--dark-green);
   color: white;
   text-transform: capitalize;
   font-size: 1rem;
@@ -51,7 +51,7 @@
 }
 
 .link_wrapper {
-  background-color: rgb(14, 117, 49);
+  background-color: var(--dark-green);
   padding: 8px;
   font-weight: 700;
   border-bottom-right-radius: 8px;

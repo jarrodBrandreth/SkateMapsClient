@@ -1,1 +1,46 @@
+.container {
+  width: min(600px, 100%);
+  margin: auto;
+}
 
+.heading {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 12px auto;
+  text-transform: capitalize;
+}
+
+.current_location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+  padding: 10px 16px;
+}
+
+.current_location .text {
+  font-weight: 600;
+}
+
+.current_location .title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.current_location .title p {
+  font-weight: 400;
+}
+
+.current_location .action {
+  padding: 6px 8px;
+  color: white;
+}
+
+.action.delete {
+  background-color: var(--danger);
+}
+
+.action.edit {
+  background-color: var(--blue);
+}

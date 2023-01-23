@@ -1,51 +1,42 @@
-.top_section {
-  position: relative;
-  padding: 8px;
-  background-color: aliceblue;
+.container {
+  width: min(600px, 100%);
+  margin: auto;
+}
+
+.heading {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 12px auto;
+}
+
+button.action {
+  color: white;
+}
+
+.cancel {
+  background-color: var(--orange);
+  padding: 6px 8px;
 }
 
 .coordinates {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  z-index: 5500;
+  gap: 24px;
+  margin-top: 14px;
 }
 
-.coordinate {
-  font-weight: 300;
+.title {
+  font-weight: 600;
 }
 
-/* lat lng title */
-.coordinate .title {
-  font-weight: 500;
-  margin-right: 4px;
-  font-size: 0.9rem;
-}
-
-.top_section .cancel {
+.use_coords {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  background-color: #de5307;
-  color: white;
-  padding: 2px  6px;
-  
-}
-
-.top_section .use_coords {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  background-color: green;
-  color: white;
-  padding: 2px  6px;
-}
-
-@media (max-width: 640px) {
-  .coordinates {
-    margin-top: 32px;
-  }
-  .top_section .use_coords {
-  }
+  top: 10px;
+  right: 126px;
+  background-color: var(--light-green);
+  z-index: 1500;
+  background-clip: padding-box;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 4px;
 }

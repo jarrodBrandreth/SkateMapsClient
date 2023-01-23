@@ -60,8 +60,6 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
 
   return (
     <section>
-      <h2>Location Form</h2>
-
       {showCoordsMap ? (
         <ChooseCoordsMap
           previousLocation={formState.coordinates}
@@ -69,7 +67,8 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
           cancel={backToForm}
         />
       ) : (
-        <form onSubmit={preview}>
+        <form className={styles.container} onSubmit={preview}>
+          <h2 className={styles.heading}>Location Form</h2>
           <fieldset className={styles.form_style}>
             <div className={`${styles.field} ${styles.title}`}>
               <label htmlFor="title">Title</label>
@@ -126,7 +125,7 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
             </div>
 
             <Button className={styles.use_map} onClick={() => toCoordsMap()}>
-              <MdPushPin size="20px" /> use map pin
+              <MdPushPin size="22px" /> use map pin
             </Button>
 
             <div className={`${styles.field} ${styles.latitude}`}>
@@ -211,9 +210,10 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
               </div>
             </div>
 
-            <div className={`${styles.field} ${styles.rating}`}>
+            <div className={`${styles.field} ${styles.rating_container}`}>
               <p>Rating</p>
               <Rating
+                className={styles.rating}
                 number={formState.rating}
                 setNumber={(rating) => formDispatch({ type: 'rating', payload: rating })}
               />

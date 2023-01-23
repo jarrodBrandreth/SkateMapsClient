@@ -6,6 +6,8 @@ import { DetailsDrawer } from '../DetailsDrawer';
 import { LocationType } from '../../types/types';
 import { applyFilters } from '../../helperFunctions/applyFilters';
 import { Button } from '../Button';
+import { MdEdit } from 'react-icons/md';
+import { FaRegTrashAlt } from 'react-icons/fa';
 import styles from './ChooseLocationMap.module.css';
 
 interface ChooseLocationMapProps {
@@ -37,10 +39,20 @@ export function ChooseLocationMap({
   };
 
   return (
-    <div>
-      <div className={styles.currentLocation}>
-        <p>Current Location: {currentLocation?.title} </p>
-        <Button onClick={callAction}>{chooseLocation.name}</Button>
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Choose A Location To {chooseLocation.name}</h2>
+      <div className={styles.current_location}>
+        <p className={styles.text}>Current Location: </p>
+        <div className={styles.title}>
+          <p>{currentLocation ? currentLocation.title : 'choose a location'}</p>
+          <Button
+            className={`${styles.action} ${styles[chooseLocation.name]}`}
+            onClick={callAction}
+          >
+            {chooseLocation.name === 'edit' ? <MdEdit /> : <FaRegTrashAlt />}
+            {chooseLocation.name}
+          </Button>
+        </div>
       </div>
       <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />

@@ -3,7 +3,7 @@ import styles from '../../styles/PageStyles.module.css';
 
 export function Dashboard() {
   return (
-    <div>
+    <section className={styles.container}>
       <header className={styles.page_header}>
         <h1 className={`${styles.page_heading} ${styles.decorative}`}>Admin Dashboard</h1>
         <p className={styles.description}>Manage locations for SkateMaps</p>
@@ -15,6 +15,6 @@ export function Dashboard() {
         suscipit mollitia possimus eum omnis enim, dignissimos, deleniti autem ex. Illo, possimus
         animi repellat expedita quod placeat?
       </p>
-    </div>
+    </section>
   );
 }

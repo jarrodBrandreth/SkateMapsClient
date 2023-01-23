@@ -47,8 +47,8 @@
 }
 
 .search_bar input:focus {
-  border: 2px solid #0e7531;
-  background-color: #ffffff;
+  border: 2px solid var(--dark-green);
+  background-color: rgb(255, 255, 255);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }

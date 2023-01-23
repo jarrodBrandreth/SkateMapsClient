@@ -52,7 +52,7 @@ export function EditLocation() {
   };
 
   return (
-    <section>
+    <section className={styles.container}>
       <header className={styles.page_header}>
         <h1 className={styles.page_heading}>
           <span className={styles.decorative}>Admin</span> Edit Location

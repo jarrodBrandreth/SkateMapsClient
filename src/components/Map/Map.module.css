@@ -2,7 +2,7 @@
   margin: auto;
   width: min(600px, 100%);
   padding: 16px;
-  background-color: #f6f7f8;
+  background-color: var(--light-gray);
   aspect-ratio: 1/1;
   border-radius: 6px;
 }

@@ -23,7 +23,7 @@ export function DeleteMyMapLocation() {
   };
 
   return (
-    <section>
+    <section className={styles.container}>
       <header className={styles.page_header}>
         <h1 className={styles.page_heading}>
           <span className={styles.decorative}>My Map</span> Delete Location

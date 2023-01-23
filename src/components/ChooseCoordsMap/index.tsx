@@ -17,34 +17,32 @@ export function ChooseCoordsMap({ previousLocation, updateWithCoords, cancel }: 
   const [coords, setCoords] = useState<LocationPinPosition>(checkCoords(previousLocation));
 
   return (
-    <div className={styles.container}>
-      <section className={styles.top_section}>
-        <Button className={styles.cancel} onClick={cancel}>
-          <MdArrowBack size="20px" />
-          Cancel
-        </Button>
-
-        <div className={styles.coordinates}>
-          <div className={styles.coordinate}>
-            <span className={styles.title}>Latitude:</span>
-            {coords ? coords.lat.toFixed(5) : 0}
-          </div>
-          <div className={styles.coordinate}>
-            <span className={styles.title}>Longitude:</span>
-            {coords ? coords.lng.toFixed(5) : 0}
-          </div>
-        </div>
+    <section className={styles.container}>
+      <h2 className={styles.heading}>Choose Coordinates</h2>
+      <Button className={`${styles.cancel} ${styles.action}`} onClick={cancel}>
+        <MdArrowBack size="20px" />
+        Cancel
+      </Button>
+      <div className={styles.coordinates}>
+        <p className={styles.coordinate}>
+          <span className={styles.title}>Latitude: </span>
+          <span className={styles.value}>{coords ? coords.lat.toFixed(4) : 0}</span>
+        </p>
+        <p className={styles.coordinate}>
+          <span className={styles.title}>Longitude: </span>
+          <span className={styles.value}>{coords ? coords.lng.toFixed(4) : 0}</span>
+        </p>
+      </div>
+      <Map center={[coords.lat, coords.lng]} zoom={17}>
         <Button
-          className={styles.use_coords}
+          className={`${styles.use_coords} ${styles.action}`}
           disabled={coords ? false : true}
           onClick={() => updateWithCoords(coords)}
         >
-          <MdPushPin size="20px" /> Use Coords
+          <MdPushPin size="22px" /> Use Coords
         </Button>
-      </section>
-      <Map center={[coords.lat, coords.lng]} zoom={17}>
         <DraggablePin coords={coords} setCoords={setCoords} />
       </Map>
-    </div>
+    </section>
   );
 }

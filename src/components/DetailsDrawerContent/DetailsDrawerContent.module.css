@@ -75,7 +75,7 @@
 }
 
 .actions button.showing {
-  border: 2px solid #0e7531;
+  border: 2px solid var(--dark-green);
   border-radius: 4px;
-  color: #0e7531;
+  color: var(--dark-green);
 }

@@ -4,7 +4,7 @@
   align-items: flex-end;
   gap: 40px;
   padding: 8px 18px;
-  background-color: rgb(14, 117, 49);
+  background-color: var(--dark-green);
   color: white;
   z-index: 2500;
 }

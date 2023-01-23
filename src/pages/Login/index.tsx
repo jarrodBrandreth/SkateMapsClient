@@ -3,6 +3,7 @@ import { useLogin } from '../../hooks/useLogin';
 import styles from './Login.module.css';
 import { Link } from 'react-router-dom';
 import { MdAccountCircle } from 'react-icons/md';
+import page_styles from '../../styles/PageStyles.module.css';
 
 export function Login() {
   const { login, isLoading, error } = useLogin();
@@ -16,7 +17,7 @@ export function Login() {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={page_styles.container}>
       <h1>Login</h1>
       <form className={styles.form} onSubmit={handleLogin}>
         <div className={styles.form_heading}>
