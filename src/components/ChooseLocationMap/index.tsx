@@ -48,6 +48,7 @@ export function ChooseLocationMap({
             <p>{currentLocation ? currentLocation.title : 'choose a location'}</p>
             <Button
               className={`${styles.action} ${styles[chooseLocation.name]}`}
+              disabled={currentLocation === null}
               onClick={callAction}
             >
               {chooseLocation.name === 'edit' ? <MdEdit /> : <FaRegTrashAlt />}
