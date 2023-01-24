@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { ImageCarousel } from '../ImageCarousel';
 import { Rating } from '../Rating';
 import { MdList, MdOutlineDescription, MdOutlineImage } from 'react-icons/md';
-import styles from './DrawerContent.module.css';
 import { Button } from '../Button';
+import { Bookmark } from '../Bookmark';
+import styles from './DrawerContent.module.css';
 
 interface DrawerContentProps {
   id: string;
@@ -23,6 +24,7 @@ export function DrawerContent({
   rating,
 }: DrawerContentProps) {
   const [showing, setShowing] = useState<'images' | 'info' | 'description'>('description');
+  const bookmark = window.location.pathname === '/';
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -48,6 +50,7 @@ export function DrawerContent({
         )}
       </div>
       <div className={styles.overlay}>
+        {bookmark && <Bookmark id={id} />}
         <Button
           className={`${styles.action} ${showing === 'description' && styles.showing}`}
           onClick={() => setShowing('description')}

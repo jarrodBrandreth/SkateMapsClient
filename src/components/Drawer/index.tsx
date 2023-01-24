@@ -11,6 +11,7 @@ import { useOnOff } from '../../hooks/useOnOff';
 import { Button } from '../Button';
 import { LocationType } from '../../types/types';
 import { DrawerContent } from '../DrawerContent';
+
 interface DrawerProps {
   location: LocationType | null;
 }
