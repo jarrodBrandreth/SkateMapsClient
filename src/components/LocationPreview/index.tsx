@@ -4,7 +4,7 @@ import { Map } from '../Map';
 import { LocationType } from '../../types/types';
 import { Button } from '../Button';
 import { MdEdit, MdCheck } from 'react-icons/md';
-import { DetailsDrawer } from '../DetailsDrawer';
+import { Drawer } from '../Drawer';
 import styles from './LocationPreview.module.css';
 
 interface LocationPreviewProps {
@@ -21,25 +21,31 @@ export function LocationPreview({
 }: LocationPreviewProps) {
   return (
     <section className={styles.container}>
-      <h3>Preview</h3>
-      <Map center={[location.coordinates.lat, location.coordinates.lng]} zoom={16}>
-        <MapMarker
-          id={location._id}
-          title={location.title}
-          category={location.category}
-          neighborhood={location.neighborhood}
-          coordinates={location.coordinates}
-          rating={location.rating}
-        />
-        <DetailsDrawer location={location} />
-      </Map>
-      <div className={styles.bottom_section}>
-        <Button className={styles.edit_button} onClick={edit}>
-          <MdEdit size="24px" /> Edit
-        </Button>
-        <Button className={styles.submit_button} disabled={isLoading} onClick={submitLocation}>
-          <MdCheck size="24px" /> Submit
-        </Button>
+      <h2 className={styles.heading}>Preview</h2>
+      <div className={styles.content}>
+        <div className={styles.top_section}>
+          <Button className={styles.edit} onClick={edit}>
+            <MdEdit size="16px" />
+            Edit
+          </Button>
+          <Button className={styles.submit} disabled={isLoading} onClick={submitLocation}>
+            <MdCheck size="16px" />
+            Submit
+          </Button>
+        </div>
+        <div className={styles.map_wrapper}>
+          <Drawer location={location} />
+          <Map center={[location.coordinates.lat, location.coordinates.lng]} zoom={16}>
+            <MapMarker
+              id={location._id}
+              title={location.title}
+              category={location.category}
+              neighborhood={location.neighborhood}
+              coordinates={location.coordinates}
+              rating={location.rating}
+            />
+          </Map>
+        </div>
       </div>
     </section>
   );

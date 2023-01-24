@@ -76,7 +76,6 @@ button.use_map {
   font-weight: 600;
   background-color: var(--blue);
   color: white;
-  font-size: 0.8rem;
 }
 
 .latitude.field {
@@ -160,7 +159,6 @@ button.use_map {
   background-color: var(--light-green);
   color: white;
   font-weight: 600;
-  font-size: 0.8rem;
   text-transform: uppercase;
 }
 

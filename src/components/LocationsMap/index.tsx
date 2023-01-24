@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Map } from '../Map';
 import { MapMarker } from '../MapMarker';
 import { SearchBar } from '../SearchBar';
-import { DetailsDrawer } from '../DetailsDrawer';
 import { LocationType } from '../../types/types';
 import { applyFilters } from '../../helperFunctions/applyFilters';
+import { Drawer } from '../Drawer';
+import styles from './LocationsMap.module.css';
 
 interface LocationsMapProps {
   locations: LocationType[];
@@ -21,10 +22,10 @@ export function LocationsMap({ locations }: LocationsMapProps) {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
+      <Drawer location={currentLocation} />
       <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
-        <DetailsDrawer location={currentLocation} />
         {locations
           .filter((location) => applyFilters(location, searchValue, selectedBorough))
           .map((location) => {

@@ -1,12 +1,15 @@
-.container {
-  width: min(600px, 100%);
-  margin: auto;
-}
-
 .heading {
   font-size: 1.2rem;
   text-align: center;
   margin: 12px auto;
+}
+
+.content {
+  width: min(600px, 100%);
+  margin: auto;
+  padding: 16px;
+  background-color: var(--light-gray);
+  border-radius: 6px;
 }
 
 button.action {
@@ -22,8 +25,14 @@ button.action {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  margin-top: 14px;
+  gap: 18px;
+  margin: 8px 0px;
+}
+
+.coordinate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
