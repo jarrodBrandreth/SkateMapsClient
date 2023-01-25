@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { Button } from '../Button';
 import styles from './ImageCarousel.module.css';
+import { BsFillImageFill } from 'react-icons/bs';
 
 interface ImageCarouselProps {
   images: string[];
@@ -15,6 +16,14 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
   if (images !== prevImages) {
     setPrevImages(images);
     setCurrentShown(0);
+  }
+
+  if (!images.length) {
+    return (
+      <div className={styles.container}>
+        <BsFillImageFill size="240px" color="#d2d6dd" />
+      </div>
+    );
   }
 
   return (

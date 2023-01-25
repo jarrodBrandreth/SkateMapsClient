@@ -106,6 +106,7 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
                 id="neighborhood"
                 name="neighborhood"
                 type="text"
+                placeholder="eg. East Village"
                 required
               />
             </div>
@@ -138,6 +139,7 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
                 type="text"
                 pattern="^[0-9]{2}[.][0-9]+"
                 title={'floating point and in range'}
+                placeholder="eg. 40.7350"
                 required
               />
               <div className={styles.coords_range}>{`*min ${latitudeMin.toFixed(
@@ -155,11 +157,12 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
                 type="text"
                 pattern="^[-][0-9]{2}[.][0-9]+"
                 title={'floating point starting with - and in range'}
+                placeholder="eg. -73.9915"
                 required
               />
-              <div className={styles.coords_range}>{`*min ${longitudeMin.toFixed(
+              <div className={styles.coords_range}>{`*max ${longitudeMax.toFixed(
                 2,
-              )}, max ${longitudeMax.toFixed(2)}`}</div>
+              )}, min ${longitudeMin.toFixed(2)}`}</div>
             </div>
 
             <div className={styles.image_section}>
@@ -227,6 +230,8 @@ export function LocationForm({ location, updateLocation }: LocationFormProps) {
                 id="description"
                 name="description"
                 rows={6}
+                maxLength={300}
+                placeholder="maximum 300 characters"
                 required
               />
             </div>

@@ -14,6 +14,7 @@ export function Button({ children, onClick, className, disabled }: ButtonProps) 
       className={className ? `${className} ${styles.button}` : styles.button}
       onClick={onClick}
       disabled={disabled}
+      type="button"
     >
       {children}
     </button>

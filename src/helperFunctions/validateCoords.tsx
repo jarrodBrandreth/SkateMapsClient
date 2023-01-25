@@ -6,6 +6,13 @@ export const validateCoords = (latitude: number, longitude: number) => {
     error: null,
   };
 
+  if (Number.isNaN(latitude) || Number.isNaN(longitude)) {
+    result = {
+      error: 'No number provided',
+    };
+    return result;
+  }
+
   if (latitude < latitudeMin || latitude > latitudeMax) {
     result = {
       error: 'Latitude out of range ',
