@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { MdApartment } from 'react-icons/md';
+import { MdApartment, MdDashboard, MdLocationOn } from 'react-icons/md';
+import { RiUserLocationFill } from 'react-icons/ri';
+import { useAuthContext } from '../../context/AuthContext';
 import styles from './Header.module.css';
 
 export function Header() {
+  const { user } = useAuthContext();
   const location = useLocation();
   const myMapString = 'my-map';
+  const dashboardString = 'admin';
   return (
     <header className={styles.site_header}>
       <div className={styles.logo}>
@@ -17,11 +21,25 @@ export function Header() {
       <nav className={styles.nav}>
         <ul>
           <li className={`${location.pathname === '/' && styles.on_page}`}>
-            <Link to="">Locations</Link>
+            <Link to="">
+              <MdLocationOn className={styles.mobile_nav_icon} />
+              Locations
+            </Link>
           </li>
           <li className={`${location.pathname.includes(myMapString) && styles.on_page}`}>
-            <Link to="my-map">My Map</Link>
+            <Link to="my-map">
+              <RiUserLocationFill className={styles.mobile_nav_icon} />
+              My Map
+            </Link>
           </li>
+          {user && (
+            <li className={`${location.pathname.includes(dashboardString) && styles.on_page}`}>
+              <Link to="admin">
+                <MdDashboard className={styles.mobile_nav_icon} />
+                Dashboard
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

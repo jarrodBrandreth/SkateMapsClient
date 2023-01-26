@@ -3,14 +3,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px 20px;
+  padding: 16px 20px;
   background-color: var(--dark-green);
+  color: white;
+}
+
+.logout {
+  font-size: 1rem;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
   color: white;
 }
 
 @media (max-width: 560px) {
   .footer {
-    margin-bottom: 48px;
-    background-color: #228b22;
+    margin-bottom: 70px;
+    background-color: var(--light-green);
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ImageCarousel } from '../ImageCarousel';
 import { Rating } from '../Rating';
-import { MdList, MdOutlineDescription, MdOutlineImage } from 'react-icons/md';
+import { MdList, MdOutlineDescription, MdOutlinePhotoLibrary } from 'react-icons/md';
 import { Button } from '../Button';
 import { Bookmark } from '../Bookmark';
 import styles from './DrawerContent.module.css';
@@ -61,7 +61,7 @@ export function DrawerContent({
           className={`${styles.action} ${showing === 'images' && styles.showing}`}
           onClick={() => setShowing('images')}
         >
-          <MdOutlineImage size="30px" />
+          <MdOutlinePhotoLibrary size="30px" />
         </Button>
         <Button
           className={`${styles.action} ${showing === 'info' && styles.showing}`}

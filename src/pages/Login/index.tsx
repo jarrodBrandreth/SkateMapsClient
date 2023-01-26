@@ -18,18 +18,18 @@ export function Login() {
 
   return (
     <section className={page_styles.container}>
-      <h1>Login</h1>
+      <h1 className={styles.heading}>Login</h1>
       <form className={styles.form} onSubmit={handleLogin}>
         <div className={styles.form_heading}>
           <MdAccountCircle size="24px" />
-          <h2>Admin</h2>
+          <h2>Dashboard</h2>
         </div>
-        <p className={styles.not_admin}>
-          Not admin? Check out{' '}
+        <p className={styles.not_user}>
+          No account? Check out{' '}
           <Link className={styles.link} to="/my-map">
             My Map
           </Link>{' '}
-          page to create your own locations.
+          page to create your own locations saved locally.
         </p>
         <div className={styles.field}>
           <label htmlFor="email">Email</label>

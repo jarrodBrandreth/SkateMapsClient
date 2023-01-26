@@ -46,22 +46,26 @@
 .nav li {
   font-weight: 600;
   font-size: 1rem;
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .nav a {
   color: inherit;
   position: relative;
   top: 4px;
-}
-.nav li.on_page {
-  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav li.on_page a {
-  border-bottom: 2px solid white;
-  top: 0px;
-  transition: top 0.25s ease;
+.mobile_nav_icon {
+  display: none;
+  font-size: 30px;
+}
+
+.nav li.on_page {
+  opacity: 1;
 }
 
 @media (hover: hover) {
@@ -76,15 +80,19 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    padding: 12px;
+    padding: 8px 12px 12px;
   }
 
   .nav ul {
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
   }
 
   .nav a {
-    top: 0px;
+    font-size: 0.9rem;
+  }
+
+  .mobile_nav_icon {
+    display: block;
   }
 }
