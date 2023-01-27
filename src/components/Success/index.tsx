@@ -1,6 +1,5 @@
 import React from 'react';
-import { MdOutlineDashboard, MdOutlineDashboardCustomize, MdTaskAlt } from 'react-icons/md';
-import { RiUserLocationFill } from 'react-icons/ri';
+import { MdTaskAlt, MdArrowForward, MdArrowBack } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { ParentPageOptions } from '../../types/types';
 import { Button } from '../Button';
@@ -11,26 +10,24 @@ interface SuccessProps {
   startNew: () => void;
   parentPage: ParentPageOptions;
 }
+
 export function Success({ pageName, startNew, parentPage }: SuccessProps) {
   return (
     <div className={styles.container}>
-      <h3 className={styles.heading}>Success!</h3>
+      <h2 className={styles.heading}>Success!</h2>
       <MdTaskAlt className={styles.success_icon} />
+
       <div className={styles.actions_container}>
         <Link
-          className={styles.action}
+          className={`${styles.action} ${styles.back_to}`}
           to={`${parentPage === 'Dashboard' ? '/dashboard' : '/my-map'}`}
         >
-          {parentPage === 'Dashboard' ? (
-            <MdOutlineDashboard size="22px" />
-          ) : (
-            <RiUserLocationFill size="22px" />
-          )}
-          {parentPage}
+          <MdArrowBack size="22px" />
+          Back To {parentPage}
         </Link>
-        <Button className={styles.action} onClick={startNew}>
-          <MdOutlineDashboardCustomize size="22px" />
+        <Button className={`${styles.action} ${styles.new}`} onClick={startNew}>
           {`${pageName} new location`}
+          <MdArrowForward size="22px" />
         </Button>
       </div>
     </div>

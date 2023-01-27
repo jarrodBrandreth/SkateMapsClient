@@ -1,0 +1,53 @@
+.container {
+  width: min(500px, 100%);
+  margin: 20px auto 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.heading {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+.success_icon {
+  font-size: 14rem;
+  color: var(--dark-green);
+}
+
+.actions_container {
+  width: 100%;
+  margin: 12px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.action {
+  width: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 6px 8px;
+}
+
+.action.back_to {
+  background-color: var(--blue);
+}
+
+.action.new {
+  background-color: var(--light-green);
+}
