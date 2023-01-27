@@ -5,7 +5,7 @@ export type UserProps = {
 
 export type CategoryOptions = 'shop' | 'spot' | 'skatepark';
 
-export type ParentPageOptions = 'My Map' | 'Admin';
+export type ParentPageOptions = 'My Map' | 'Dashboard';
 
 export type CreateLocationSteps = 'form' | 'preview' | 'success';
 

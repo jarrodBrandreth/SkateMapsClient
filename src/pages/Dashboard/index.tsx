@@ -5,7 +5,7 @@ export function Dashboard() {
   return (
     <section className={styles.container}>
       <header className={styles.page_header}>
-        <h1 className={`${styles.page_heading} ${styles.decorative}`}>Admin Dashboard</h1>
+        <h1 className={`${styles.page_heading} ${styles.decorative}`}>Dashboard</h1>
         <p className={styles.description}>Manage locations for SkateMaps</p>
       </header>
 

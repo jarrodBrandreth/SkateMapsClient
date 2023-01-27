@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthContext } from './context/AuthContext';
 import { Layout } from './pages/Layout';
 import { Login } from './pages/Login';
-import { MyMap } from './pages/MyMapOutlet';
-import { Admin } from './pages/AdminOutlet';
+import { MyMapOutlet } from './pages/MyMapOutlet';
+import { DashboardOutlet } from './pages/DashboardOutlet';
 import { CreateLocation } from './pages/CreateLocation';
 import { CreateMyMapLocation } from './pages/CreateMyMapLocation';
 import { LocationsPage } from './pages/LocationsPage';
-import { MyMapPage } from './pages/MyMapPage';
+import { MyMap } from './pages/MyMap';
 import { NotFound } from './pages/NotFound';
 import { EditLocation } from './pages/EditLocation';
 import { DeleteLocation } from './pages/DeleteLocation';
@@ -25,14 +25,14 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<LocationsPage />} />
-          <Route path="login" element={!user ? <Login /> : <Navigate to="/admin" />} />
-          <Route path="my-map" element={<MyMap />}>
-            <Route path="" element={<MyMapPage />} />
+          <Route path="login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
+          <Route path="my-map" element={<MyMapOutlet />}>
+            <Route path="" element={<MyMap />} />
             <Route path="create-location" element={<CreateMyMapLocation />} />
             <Route path="edit-location" element={<EditMyMapLocation />} />
             <Route path="delete-location" element={<DeleteMyMapLocation />} />
           </Route>
-          <Route path="admin" element={<Admin user={user} />}>
+          <Route path="dashboard" element={<DashboardOutlet user={user} />}>
             <Route path="" element={<Dashboard />} />
             <Route path="create-location" element={<CreateLocation />} />
             <Route path="edit-location" element={<EditLocation />} />

@@ -15,7 +15,7 @@ export function SecondaryNav({ parentPage }: SecondaryNavProps) {
       <ul className={styles.list_container}>
         <li>
           <Link className={styles.link} to="">
-            {parentPage === 'Admin' ? (
+            {parentPage === 'Dashboard' ? (
               <MdDashboard size="22px" />
             ) : (
               <RiUserLocationFill size="22px" />

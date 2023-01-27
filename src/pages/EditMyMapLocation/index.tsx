@@ -79,7 +79,7 @@ export function EditMyMapLocation() {
           edit={backToForm}
         />
       )}
-      {step === 'success' && <Success startNew={editNew} pageName="edit" parentPage={'Admin'} />}
+      {step === 'success' && <Success startNew={editNew} pageName="edit" parentPage={'My Map'} />}
 
       {error && <ErrorDisplay errorMessage={error} closeErrorDisplay={() => setError(null)} />}
     </section>

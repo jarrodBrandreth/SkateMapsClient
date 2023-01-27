@@ -2,18 +2,18 @@ import { Outlet, Navigate } from 'react-router-dom';
 import { SecondaryNav } from '../../components/SecondaryNav';
 import { UserProps } from '../../types/types';
 
-interface AdminProps {
+interface DashboardOutletProps {
   user: UserProps;
 }
 
-export function Admin({ user }: AdminProps) {
+export function DashboardOutlet({ user }: DashboardOutletProps) {
   if (!user) {
     return <Navigate to="/login" replace />;
   }
 
   return (
     <>
-      <SecondaryNav parentPage="Admin" />
+      <SecondaryNav parentPage="Dashboard" />
       <Outlet />
     </>
   );

@@ -55,7 +55,7 @@ export function EditLocation() {
     <section className={styles.container}>
       <header className={styles.page_header}>
         <h1 className={styles.page_heading}>
-          <span className={styles.decorative}>Admin</span> Edit Location
+          <span className={styles.decorative}>Dashboard</span> Edit Location
         </h1>
         <StepsDisplay
           steps={['choose location', 'form', 'preview', 'success']}
@@ -81,7 +81,9 @@ export function EditLocation() {
           edit={backToForm}
         />
       )}
-      {step === 'success' && <Success startNew={editNew} pageName="edit" parentPage={'Admin'} />}
+      {step === 'success' && (
+        <Success startNew={editNew} pageName="edit" parentPage={'Dashboard'} />
+      )}
 
       {error && <ErrorDisplay errorMessage={error} closeErrorDisplay={() => setError(null)} />}
     </section>

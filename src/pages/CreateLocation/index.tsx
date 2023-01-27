@@ -50,7 +50,7 @@ export function CreateLocation() {
     <section className={styles.container}>
       <header className={styles.page_header}>
         <h1 className={styles.page_heading}>
-          <span className={styles.decorative}>Admin</span> Create Location
+          <span className={styles.decorative}>Dashboard</span> Create Location
         </h1>
         <StepsDisplay
           steps={['form', 'preview', 'success']}
@@ -69,7 +69,7 @@ export function CreateLocation() {
         />
       )}
       {step === 'success' && (
-        <Success startNew={createNew} pageName="create" parentPage={'Admin'} />
+        <Success startNew={createNew} pageName="create" parentPage={'Dashboard'} />
       )}
 
       {error && <ErrorDisplay errorMessage={error} closeErrorDisplay={() => setError(null)} />}

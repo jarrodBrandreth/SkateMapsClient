@@ -3,7 +3,7 @@ import { LocationsMap } from '../../components/LocationsMap';
 import { useLocationsContext } from '../../context/LocationsContext';
 import styles from '../../styles/PageStyles.module.css';
 
-export function MyMapPage() {
+export function MyMap() {
   const { myMapLocations } = useLocationsContext();
   return (
     <section className={styles.container}>

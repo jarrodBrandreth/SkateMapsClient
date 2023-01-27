@@ -9,7 +9,7 @@ export function Header() {
   const { user } = useAuthContext();
   const location = useLocation();
   const myMapString = 'my-map';
-  const dashboardString = 'admin';
+  const dashboardString = 'dashboard';
   return (
     <header className={styles.site_header}>
       <div className={styles.logo}>
@@ -34,7 +34,7 @@ export function Header() {
           </li>
           {user && (
             <li className={`${location.pathname.includes(dashboardString) && styles.on_page}`}>
-              <Link to="admin">
+              <Link to="dashboard">
                 <MdDashboard className={styles.mobile_nav_icon} />
                 Dashboard
               </Link>

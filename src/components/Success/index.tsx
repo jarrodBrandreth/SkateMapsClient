@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdOutlineDashboard, MdOutlineDashboardCustomize, MdTaskAlt } from 'react-icons/md';
+import { RiUserLocationFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { ParentPageOptions } from '../../types/types';
 import { Button } from '../Button';
@@ -16,9 +17,16 @@ export function Success({ pageName, startNew, parentPage }: SuccessProps) {
       <h3 className={styles.heading}>Success!</h3>
       <MdTaskAlt className={styles.success_icon} />
       <div className={styles.actions_container}>
-        <Link className={styles.action} to={`${parentPage === 'Admin' ? '/admin' : '/my-map'}`}>
-          <MdOutlineDashboard size="22px" />
-          {parentPage === 'Admin' ? 'Dashboard' : 'My Map'}
+        <Link
+          className={styles.action}
+          to={`${parentPage === 'Dashboard' ? '/dashboard' : '/my-map'}`}
+        >
+          {parentPage === 'Dashboard' ? (
+            <MdOutlineDashboard size="22px" />
+          ) : (
+            <RiUserLocationFill size="22px" />
+          )}
+          {parentPage}
         </Link>
         <Button className={styles.action} onClick={startNew}>
           <MdOutlineDashboardCustomize size="22px" />

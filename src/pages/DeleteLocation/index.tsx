@@ -36,7 +36,7 @@ export function DeleteLocation() {
     <section className={styles.container}>
       <header className={styles.page_header}>
         <h1 className={styles.page_heading}>
-          <span className={styles.decorative}>Admin</span> Delete Location
+          <span className={styles.decorative}>Dashboard</span> Delete Location
         </h1>
         <StepsDisplay
           steps={['choose location', 'success']}
@@ -54,7 +54,7 @@ export function DeleteLocation() {
       )}
 
       {step === 'success' && (
-        <Success startNew={deleteNew} pageName="delete" parentPage={'Admin'} />
+        <Success startNew={deleteNew} pageName="delete" parentPage={'Dashboard'} />
       )}
 
       {error && <ErrorDisplay errorMessage={error} closeErrorDisplay={() => setError(null)} />}
