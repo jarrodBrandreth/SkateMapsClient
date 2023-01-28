@@ -4,6 +4,7 @@ import styles from './Login.module.css';
 import { Link } from 'react-router-dom';
 import { MdAccountCircle } from 'react-icons/md';
 import page_styles from '../../styles/PageStyles.module.css';
+import { Loader } from '../../components/Loader';
 
 export function Login() {
   const { login, isLoading, error } = useLogin();
@@ -55,6 +56,7 @@ export function Login() {
         </div>
         <input className={styles.login_button} type="submit" value="Login" disabled={isLoading} />
         {error && <div className={styles.error}>{error}</div>}
+        {isLoading && <Loader />}
       </form>
     </section>
   );

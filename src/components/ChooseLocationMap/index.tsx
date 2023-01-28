@@ -8,6 +8,7 @@ import { Button } from '../Button';
 import { MdEdit } from 'react-icons/md';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { Drawer } from '../Drawer';
+import { Loader } from '../Loader';
 import styles from './ChooseLocationMap.module.css';
 
 interface ChooseLocationMapProps {
@@ -48,7 +49,7 @@ export function ChooseLocationMap({
             <p>{currentLocation ? currentLocation.title : 'choose a location'}</p>
             <Button
               className={`${styles.action} ${styles[chooseLocation.name]}`}
-              disabled={currentLocation === null}
+              disabled={currentLocation === null || isLoading}
               onClick={callAction}
             >
               {chooseLocation.name === 'edit' ? <MdEdit /> : <FaRegTrashAlt />}
@@ -57,6 +58,7 @@ export function ChooseLocationMap({
           </div>
         </div>
         <div className={styles.map_wrapper}>
+          {isLoading && <Loader />}
           <Drawer location={currentLocation} />
           <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
             <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />

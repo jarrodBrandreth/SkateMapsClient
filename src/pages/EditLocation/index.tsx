@@ -68,7 +68,7 @@ export function EditLocation() {
         <ChooseLocationMap
           locations={locations}
           chooseLocation={{ name: 'edit', action: chooseLocation }}
-          isLoading={false}
+          isLoading={isLoading}
         />
       )}
 

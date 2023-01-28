@@ -5,13 +5,15 @@ import { SearchBar } from '../SearchBar';
 import { LocationType } from '../../types/types';
 import { applyFilters } from '../../helperFunctions/applyFilters';
 import { Drawer } from '../Drawer';
+import { Loader } from '../Loader';
 import styles from './LocationsMap.module.css';
 
 interface LocationsMapProps {
   locations: LocationType[];
+  isLoading: boolean;
 }
 
-export function LocationsMap({ locations }: LocationsMapProps) {
+export function LocationsMap({ locations, isLoading }: LocationsMapProps) {
   const [searchValue, setSearchValue] = useState('');
   const [selectedBorough, setSelectedBorough] = useState<string | null>(null);
   const [currentLocation, setCurrentLocation] = useState<LocationType | null>(null);
@@ -23,6 +25,7 @@ export function LocationsMap({ locations }: LocationsMapProps) {
 
   return (
     <div className={styles.container}>
+      {isLoading && <Loader />}
       <Drawer location={currentLocation} />
       <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />

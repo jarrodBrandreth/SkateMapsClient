@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useAuthContext } from '../context/AuthContext';
+import { useLocationsContext } from '../context/LocationsContext';
 import { LocationActionResult, LocationType } from '../types/types';
-import { useFetchLocations } from './useFetchLocations';
 
 export const useEditLocation = () => {
   const { user } = useAuthContext();
-  const { fetchLocations } = useFetchLocations();
+  const { fetchLocations } = useLocationsContext();
   const [isLoading, setIsLoading] = useState(false);
 
   const editLocation = async (location: LocationType) => {

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useAuthContext } from '../context/AuthContext';
+import { useLocationsContext } from '../context/LocationsContext';
 import { LocationActionResult } from '../types/types';
-import { useFetchLocations } from './useFetchLocations';
 
 export const useDeleteLocation = () => {
   const { user } = useAuthContext();
-  const { fetchLocations } = useFetchLocations();
+  const { fetchLocations } = useLocationsContext();
   const [isLoading, setIsLoading] = useState(false);
 
   const deleteLocation = async (id: string) => {

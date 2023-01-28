@@ -6,6 +6,7 @@ import { Button } from '../Button';
 import { MdEdit, MdCheck } from 'react-icons/md';
 import { Drawer } from '../Drawer';
 import styles from './LocationPreview.module.css';
+import { Loader } from '../Loader';
 
 interface LocationPreviewProps {
   location: LocationType;
@@ -13,6 +14,7 @@ interface LocationPreviewProps {
   submitLocation: () => void;
   edit: () => void;
 }
+
 export function LocationPreview({
   location,
   isLoading,
@@ -34,6 +36,7 @@ export function LocationPreview({
           </Button>
         </div>
         <div className={styles.map_wrapper}>
+          {isLoading && <Loader />}
           <Drawer location={location} />
           <Map center={[location.coordinates.lat, location.coordinates.lng]} zoom={16}>
             <MapMarker

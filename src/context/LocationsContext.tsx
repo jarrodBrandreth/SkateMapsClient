@@ -7,6 +7,8 @@ interface LocationsContextProps {
   setLocations: React.Dispatch<React.SetStateAction<LocationType[]>>;
   myMapLocations: LocationType[];
   setMyMapLocations: React.Dispatch<React.SetStateAction<LocationType[]>>;
+  fetchLocations: () => Promise<void>;
+  isLoading: boolean;
 }
 
 const LocationsContext = createContext<LocationsContextProps | undefined>(undefined);
@@ -18,19 +20,23 @@ interface LocationsProviderProps {
 export function LocationsProvider({ children }: LocationsProviderProps) {
   const [locations, setLocations] = useState<Array<LocationType>>([]);
   const [myMapLocations, setMyMapLocations] = useState<Array<LocationType>>(getMyMapLocations());
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchLocations = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/locations/');
+      const result = await response.json();
+      if (response.ok) {
+        setLocations(result);
+      }
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchLocations = async () => {
-      try {
-        const response = await fetch('/api/locations/');
-        const result = await response.json();
-        if (response.ok) {
-          setLocations(result);
-        }
-      } catch (error) {
-        return;
-      }
-    };
     fetchLocations();
   }, []);
 
@@ -43,6 +49,8 @@ export function LocationsProvider({ children }: LocationsProviderProps) {
     setLocations,
     myMapLocations,
     setMyMapLocations,
+    fetchLocations,
+    isLoading,
   };
   return <LocationsContext.Provider value={value}>{children}</LocationsContext.Provider>;
 }

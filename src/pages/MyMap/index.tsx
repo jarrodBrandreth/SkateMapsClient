@@ -11,7 +11,7 @@ export function MyMap() {
         <h1 className={`${styles.page_heading} ${styles.decorative}`}>My Map</h1>
         <p className={styles.description}>Collection of your own map locations</p>
       </header>
-      <LocationsMap locations={myMapLocations} />
+      <LocationsMap locations={myMapLocations} isLoading={false} />
     </section>
   );
 }
