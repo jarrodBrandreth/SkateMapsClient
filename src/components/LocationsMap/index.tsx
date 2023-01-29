@@ -7,6 +7,7 @@ import { applyFilters } from '../../helperFunctions/applyFilters';
 import { Drawer } from '../Drawer';
 import { Loader } from '../Loader';
 import styles from './LocationsMap.module.css';
+import { Legend } from '../Legend';
 
 interface LocationsMapProps {
   locations: LocationType[];
@@ -26,6 +27,7 @@ export function LocationsMap({ locations, isLoading }: LocationsMapProps) {
   return (
     <div className={styles.container}>
       {isLoading && <Loader />}
+      <Legend />
       <Drawer location={currentLocation} />
       <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />

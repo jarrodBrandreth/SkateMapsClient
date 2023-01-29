@@ -10,6 +10,7 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 import { Drawer } from '../Drawer';
 import { Loader } from '../Loader';
 import styles from './ChooseLocationMap.module.css';
+import { Legend } from '../Legend';
 
 interface ChooseLocationMapProps {
   locations: LocationType[];
@@ -59,6 +60,7 @@ export function ChooseLocationMap({
         </div>
         <div className={styles.map_wrapper}>
           {isLoading && <Loader />}
+          <Legend />
           <Drawer location={currentLocation} />
           <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
             <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />

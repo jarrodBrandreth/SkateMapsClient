@@ -8,7 +8,6 @@
 .content {
   width: min(600px, 100%);
   margin: auto;
-  padding: 16px;
   background-color: var(--light-gray);
   border-radius: 6px;
 }
@@ -17,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  padding: 16px 16px 0px;
 }
 
 .edit,
@@ -36,5 +35,6 @@
 
 .map_wrapper {
   position: relative;
+  padding: 16px;
   overflow: hidden;
 }

@@ -8,7 +8,6 @@
 .content {
   width: min(600px, 100%);
   margin: auto;
-  padding: 16px;
   background-color: var(--light-gray);
   border-radius: 6px;
 }
@@ -17,9 +16,9 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 0px 8px;
+  gap: 8px;
   text-transform: capitalize;
-  margin-bottom: 8px;
+  padding: 16px 16px 0px 16px;
 }
 
 .current_location .text {
@@ -52,4 +51,5 @@
 .map_wrapper {
   position: relative;
   overflow: hidden;
+  padding: 16px;
 }

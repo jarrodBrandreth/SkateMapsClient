@@ -1,0 +1,55 @@
+.button {
+  position: absolute;
+  top: 28px;
+  left: 24px;
+  z-index: 1002;
+}
+
+.button .icon {
+  font-size: 32px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  background-clip: padding-box;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.legend_container {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: white;
+  background-clip: padding-box;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom-right-radius: 4px;
+  transform: translateX(-120%);
+  transition: all 0.5s ease;
+  z-index: 1001;
+}
+
+.legend_container.opened {
+  transform: translateX(0%);
+}
+
+.heading {
+  margin: 16px 0px 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.list_item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 12px 12px 12px 4px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.list_item img {
+  width: 30px;
+}
