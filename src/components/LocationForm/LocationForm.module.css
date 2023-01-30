@@ -173,6 +173,7 @@ button.use_map {
   background-color: var(--light-green);
   color: white;
   font-weight: 600;
+  font-size: 0.9rem;
   text-transform: uppercase;
 }
 
