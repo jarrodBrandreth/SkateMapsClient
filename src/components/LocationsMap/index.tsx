@@ -16,7 +16,6 @@ interface LocationsMapProps {
 
 export function LocationsMap({ locations, isLoading }: LocationsMapProps) {
   const [searchValue, setSearchValue] = useState('');
-  const [selectedBorough, setSelectedBorough] = useState<string | null>(null);
   const [currentLocation, setCurrentLocation] = useState<LocationType | null>(null);
 
   const updateCurrentLocation = (id: string) => {
@@ -32,7 +31,7 @@ export function LocationsMap({ locations, isLoading }: LocationsMapProps) {
       <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         {locations
-          .filter((location) => applyFilters(location, searchValue, selectedBorough))
+          .filter((location) => applyFilters(location, searchValue))
           .map((location) => {
             return (
               <MapMarker
