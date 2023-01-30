@@ -1,10 +1,10 @@
 .form_container {
   width: min(460px, 100%);
   margin: 16px auto 60px;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 4px;
   padding: 8px 32px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid #00000033;
 }
 
 .choose_different_location {
@@ -16,7 +16,7 @@
 
 .choose_different_location button {
   background-color: var(--orange);
-  color: white;
+  color: #ffffff;
   padding: 6px 8px;
 }
 
@@ -59,7 +59,7 @@
 .field textarea {
   width: 100%;
   padding: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #0000004d;
   border-radius: 4px;
   resize: none;
   font-size: 0.9rem;
@@ -88,7 +88,7 @@ button.use_map {
   padding: 6px 8px;
   font-weight: 600;
   background-color: var(--blue);
-  color: white;
+  color: #ffffff;
 }
 
 .latitude.field {
@@ -129,7 +129,7 @@ button.use_map {
   gap: 8px;
   padding: 4px 6px;
   border-radius: 4px;
-  background-color: rgb(233, 230, 225);
+  background-color: #e9e6e1;
 }
 
 .image_container .url {
@@ -171,7 +171,7 @@ button.use_map {
   border: none;
   border-radius: 4px;
   background-color: var(--light-green);
-  color: white;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
   text-transform: uppercase;

@@ -9,7 +9,7 @@
   align-items: center;
   font-size: 1rem;
   background-color: var(--danger);
-  color: white;
+  color: #ffffff;
   z-index: 5001;
 }
 

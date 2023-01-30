@@ -9,10 +9,10 @@
   font-size: 32px;
   padding: 4px;
   border-radius: 50%;
-  background-color: white;
-  color: black;
+  background-color: #ffffff;
+  color: #000000;
   background-clip: padding-box;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid #00000033;
   transition: all 0.5s ease;
 }
 
@@ -20,9 +20,9 @@
   position: absolute;
   top: 16px;
   left: 16px;
-  background-color: white;
+  background-color: #ffffff;
   background-clip: padding-box;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid #00000033;
   border-bottom-right-radius: 4px;
   transform: translateX(-120%);
   transition: all 0.5s ease;

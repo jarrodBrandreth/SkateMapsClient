@@ -13,12 +13,12 @@ export function Bookmark({ id }: BookMarkProps) {
   if (isBookmarked)
     return (
       <Button onClick={removeBookmark}>
-        <MdBookmarkRemove color="white" size="30px" />
+        <MdBookmarkRemove color="#ffffff" size="30px" />
       </Button>
     );
   return (
     <Button onClick={addBookmark}>
-      <MdOutlineBookmarkAdd color="white" size="30px" />
+      <MdOutlineBookmarkAdd color="#ffffff" size="30px" />
     </Button>
   );
 }

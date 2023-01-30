@@ -18,18 +18,17 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --dark-green: rgb(14, 117, 49);
-  /* --light-green: rgb(106, 185, 53); */
-  --light-green: rgb(78,174,73);
-  --dark-gray: rgb(89, 89, 89);
-  --mid-gray:rgb(210, 214, 221);
-  --light-gray:rgb(246, 247, 248);
-  --blue: rgb(70, 120, 178);
-  --danger:rgb(205, 52, 57);
-  --orange:rgb(235,158,62);
+  --dark-green: #0e7531;
+  --light-green: #4eae49;
+  --dark-gray: #595959;
+  --mid-gray:#d2d6dd;
+  --light-gray:#f6f7f8;
+  --blue: #4678b2;
+  --danger:#cd3439;
+  --orange:#eb9e3e;
 
   color: var(--dark-gray);
-  background-color: white;
+  background-color: #ffffff;
 }
 
 a {

@@ -2,10 +2,10 @@ button.center_marker_button {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: white;
+  background-color: #ffffff;
   color: black;
   background-clip: padding-box;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid #00000033;
   padding: 4px;
   z-index: 400;
 }

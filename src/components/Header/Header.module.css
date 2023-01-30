@@ -5,7 +5,7 @@
   gap: 40px;
   padding: 8px 18px;
   background-color: var(--dark-green);
-  color: white;
+  color: #ffffff;
   z-index: 2500;
 }
 
@@ -18,10 +18,10 @@
 }
 
 .logo svg {
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   border-radius: 2px;
   padding: 1px;
-  color: white;
+  color: #ffffff;
 }
 
 .title {

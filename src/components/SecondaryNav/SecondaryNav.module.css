@@ -1,5 +1,5 @@
 .nav {
-  background-color: white;
+  background-color: #ffffff;
   padding: 6px 0px;
   z-index: 2499;
 }
@@ -34,7 +34,7 @@
   }
 
   .link {
-    color: white;
+    color: #ffffff;
     font-size: 0.8rem;
   }
 }

@@ -44,12 +44,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.424);
+  background-color: #0000006c;
   padding: 4px;
 }
 
 .action {
-  color: white;
+  color: #ffffff;
 }
 
 .action.showing {
