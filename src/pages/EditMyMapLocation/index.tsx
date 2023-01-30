@@ -24,6 +24,12 @@ export function EditMyMapLocation() {
     setStep('preview');
   };
 
+  // button appears with form to take user back to choose location state
+  const chooseDifferentLocation = () => {
+    setLocation(null);
+    setStep('choose location');
+  };
+
   // removes error display and takes user back to form
   const backToForm = () => {
     setStep('form');
@@ -70,7 +76,14 @@ export function EditMyMapLocation() {
         />
       )}
 
-      {step === 'form' && <LocationForm location={location} updateLocation={updateLocation} />}
+      {step === 'form' && (
+        <LocationForm
+          location={location}
+          updateLocation={updateLocation}
+          chooseDifferentLocation={chooseDifferentLocation}
+        />
+      )}
+
       {step === 'preview' && location && (
         <LocationPreview
           location={location}

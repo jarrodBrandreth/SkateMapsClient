@@ -1,10 +1,23 @@
-.container {
+.form_container {
   width: min(460px, 100%);
-  margin: auto;
+  margin: 16px auto 60px;
   background-color: white;
   border-radius: 4px;
   padding: 8px 32px;
   border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.choose_different_location {
+  width: min(460px, 100%);
+  margin: 16px auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.choose_different_location button {
+  background-color: var(--orange);
+  color: white;
+  padding: 6px 8px;
 }
 
 .heading {
@@ -108,6 +121,7 @@ button.use_map {
 }
 
 .image_container {
+  width: 93%;
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
