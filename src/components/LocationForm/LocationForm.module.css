@@ -115,6 +115,13 @@ button.use_map {
   gap: 6px;
 }
 
+.image_error {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 12px;
+  color: var(--danger);
+}
+
 .images {
   display: flex;
   flex-direction: column-reverse;

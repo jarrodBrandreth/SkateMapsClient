@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useLocationForm } from '../../hooks/useLocationForm';
 import { MdAddCircleOutline, MdArrowBack, MdArrowForward, MdPushPin } from 'react-icons/md';
 import { FaRegTrashAlt } from 'react-icons/fa';
@@ -26,6 +26,10 @@ export function LocationForm({
   const { formState, formDispatch } = useLocationForm(location);
   const { isOn: showCoordsMap, turnOn: toCoordsMap, turnOff: backToForm } = useOnOff(false);
   const [error, setError] = useState<false | string>(false);
+  const imageUrlInvalid = useMemo(
+    () => formState.add_image_url.includes(' '),
+    [formState.add_image_url],
+  );
 
   const updateWithCoords = (coords: LocationPinPosition) => {
     const payload = {
@@ -192,9 +196,8 @@ export function LocationForm({
                       name="add_image_url"
                       type="text"
                     />
-
                     <Button
-                      disabled={formState.add_image_url === ''}
+                      disabled={formState.add_image_url === '' || imageUrlInvalid}
                       onClick={() =>
                         formDispatch({
                           type: 'add image',
@@ -206,6 +209,7 @@ export function LocationForm({
                     </Button>
                   </div>
                 </div>
+                {imageUrlInvalid && <p className={styles.image_error}>url cannot contain spaces</p>}
                 <div className={styles.images}>
                   {formState.images.map((url) => {
                     return (
