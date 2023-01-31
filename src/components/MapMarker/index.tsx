@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Marker, Popup, useMap } from 'react-leaflet';
-import { MdZoomIn, MdFilterCenterFocus } from 'react-icons/md';
+import { MdZoomIn } from 'react-icons/md';
 import { getCustomIcon } from '../../helperFunctions/getCustomIcons';
 import { Button } from '../Button';
 import { Rating } from '../Rating';
@@ -40,7 +40,6 @@ export function MapMarker({
   };
 
   const zoomInOnMarker = () => map.flyTo([coordinates.lat, coordinates.lng], 18);
-  const centerMapOnMarker = () => map.flyTo([coordinates.lat, coordinates.lng]);
 
   return (
     <Marker
@@ -52,9 +51,6 @@ export function MapMarker({
       <Popup>
         <Button className={styles.zoom_in} onClick={zoomInOnMarker}>
           <MdZoomIn size="18px" />
-        </Button>
-        <Button className={styles.center} onClick={centerMapOnMarker}>
-          <MdFilterCenterFocus size="18px" />
         </Button>
         {title} <br />
         {neighborhood} <br />
