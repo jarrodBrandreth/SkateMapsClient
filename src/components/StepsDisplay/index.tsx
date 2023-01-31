@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { IconType } from 'react-icons';
 import styles from './StepsDisplay.module.css';
 
@@ -9,14 +9,8 @@ interface StepsDisplayProps {
 }
 
 export function StepsDisplay({ steps, Icons, currentStep }: StepsDisplayProps) {
-  const [stepNumber, setStepNumber] = useState<number>(0);
+  const stepNumber = steps.indexOf(currentStep) + 1;
 
-  useEffect(() => {
-    const index = steps.indexOf(currentStep);
-    setStepNumber(index + 1);
-  }, [currentStep, steps]);
-
-  // if passed an empty array return empty fragment
   if (!steps.length) return <></>;
 
   return (
