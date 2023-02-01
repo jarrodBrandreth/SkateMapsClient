@@ -1,0 +1,13 @@
+.link {
+  font-weight: 500;
+  color: var(--dark-green);
+}
+
+.icon {
+  font-size: 26px;
+  color: var(--dark-green);
+}
+
+.asterisk {
+  font-size: 0.8rem;
+}
