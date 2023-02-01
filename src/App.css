@@ -41,6 +41,10 @@ button {
   color: inherit;
 }
 
+li {
+  list-style: none;
+}
+
 .leaflet-container {
   position: relative;
   width: 100%;

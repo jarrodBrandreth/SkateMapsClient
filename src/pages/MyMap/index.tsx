@@ -1,5 +1,6 @@
 import React from 'react';
 import { LocationsMap } from '../../components/LocationsMap';
+import { LocationsStats } from '../../components/LocationsStats';
 import { useLocationsContext } from '../../context/LocationsContext';
 import styles from '../../styles/PageStyles.module.css';
 
@@ -11,6 +12,7 @@ export function MyMap() {
         <h1 className={`${styles.page_heading} ${styles.decorative}`}>My Map</h1>
         <p className={styles.description}>Collection of your own map locations</p>
       </header>
+      <LocationsStats locations={myMapLocations} startingState={false} />
       <LocationsMap locations={myMapLocations} isLoading={false} />
     </section>
   );

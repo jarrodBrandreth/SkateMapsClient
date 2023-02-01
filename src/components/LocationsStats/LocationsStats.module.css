@@ -1,0 +1,56 @@
+.container {
+  width: min(600px, 100%);
+  margin: 16px auto;
+}
+
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+
+.heading h2 {
+  font-size: 1.2rem;
+}
+
+.list_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  height: 0px;
+  overflow: hidden;
+}
+
+.list_container.opened {
+  height: max-content;
+}
+
+.list_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: auto;
+}
+
+.list_item svg {
+  padding: 0px 4px;
+}
+
+.list_item img {
+  width: 30px;
+}
+
+.title {
+  font-weight: 500;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+}
+
+.number {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--light-green);
+}
