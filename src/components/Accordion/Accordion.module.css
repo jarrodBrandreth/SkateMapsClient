@@ -1,0 +1,19 @@
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+
+.heading h2 {
+  font-size: 1.2rem;
+}
+
+.content {
+  height: 0px;
+  overflow: hidden;
+}
+
+.content.opened {
+  height: max-content;
+}
