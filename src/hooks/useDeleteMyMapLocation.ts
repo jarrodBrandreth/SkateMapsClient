@@ -9,5 +9,9 @@ export const useDeleteMyMapLocation = () => {
     );
   };
 
-  return { deleteMyMapLocation };
+  const deleteAllMyMapLocations = () => {
+    setMyMapLocations([]);
+  }
+
+  return { deleteMyMapLocation,deleteAllMyMapLocations };
 };

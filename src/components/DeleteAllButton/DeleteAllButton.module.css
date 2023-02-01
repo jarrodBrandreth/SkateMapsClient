@@ -1,0 +1,44 @@
+.delete,
+.cancel,
+.confirm {
+  color: #ffffff;
+  padding: 4px 8px;
+}
+
+.delete {
+  background-color: var(--danger);
+  gap: 6px;
+  margin-top: 40px;
+}
+
+.confirm_container {
+  width: 280px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px;
+  background-color: var(--light-gray);
+  border: 2px solid var(--dark-green);
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 3px #0000001f, 0 1px 2px #0000003d;
+  z-index: 5000;
+}
+
+.confirm_container p {
+  width: 100%;
+}
+
+.cancel {
+  background-color: var(--light-green);
+}
+
+.confirm {
+  background-color: var(--danger);
+}
