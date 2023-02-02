@@ -7,6 +7,12 @@ import styles from './DeleteAllButton.module.css';
 export function DeleteAllButton() {
   const { deleteAllMyMapLocations } = useDeleteMyMapLocation();
   const [popUp, setPopUp] = useState(false);
+
+  const deleteAll = () => {
+    deleteAllMyMapLocations();
+    setPopUp(false);
+  };
+
   return (
     <>
       <Button className={styles.delete} onClick={() => setPopUp(true)}>
@@ -19,7 +25,7 @@ export function DeleteAllButton() {
           <Button className={styles.cancel} onClick={() => setPopUp(false)}>
             Cancel
           </Button>
-          <Button className={styles.confirm} onClick={deleteAllMyMapLocations}>
+          <Button className={styles.confirm} onClick={deleteAll}>
             Confirm
           </Button>
         </div>
