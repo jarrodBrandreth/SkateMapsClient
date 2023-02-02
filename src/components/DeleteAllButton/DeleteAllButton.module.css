@@ -8,7 +8,7 @@
 .delete {
   background-color: var(--danger);
   gap: 6px;
-  margin-top: 40px;
+  margin: 40px 0px;
 }
 
 .confirm_container {

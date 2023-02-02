@@ -4,12 +4,15 @@
   padding: 12px;
 }
 
+.container > * {
+  margin: 16px auto;
+}
+
 .page_header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
   text-transform: capitalize;
 }
 

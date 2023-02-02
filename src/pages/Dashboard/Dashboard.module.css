@@ -1,15 +1,13 @@
 .actions_container {
-  width: 452px;
-  margin: 16px auto;
+  width: 484px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
 }
 
 .sub_heading {
-  margin: 16px auto;
   font-size: 1.2rem;
 }
 
@@ -31,16 +29,24 @@
   font-size: 4rem;
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
   .action:hover {
     color: #ffffff;
     background-color: var(--dark-green);
     transform: scale(1.1);
+    transition: all 0.25s ease-in-out;
   }
 }
 
-@media (max-width: 476px) {
+@media (max-width: 524px) {
+  .actions_container {
+    width: 312px;
+  }
+}
+
+@media (max-width: 360px) {
   .actions_container {
     width: 296px;
+    gap: 16px;
   }
 }

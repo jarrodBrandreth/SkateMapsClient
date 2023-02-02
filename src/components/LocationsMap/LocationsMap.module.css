@@ -1,7 +1,6 @@
 .container {
   position: relative;
   width: min(600px, 100%);
-  margin: auto;
   padding: 16px;
   overflow: hidden;
   border-radius: 6px;
