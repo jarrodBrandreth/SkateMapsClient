@@ -7,12 +7,14 @@ import { MdOutlineMap, MdZoomIn } from 'react-icons/md';
 import { HiChevronDoubleLeft } from 'react-icons/hi';
 import { Button } from '../Button';
 import styles from './Legend.module.css';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 export function Legend() {
-  const { isOn, toggle } = useOnOff(false);
+  const { isOn, turnOff, toggle } = useOnOff(false);
+  const ref = useOutsideClick(turnOff);
 
   return (
-    <>
+    <div ref={ref}>
       <Button className={styles.button} onClick={toggle}>
         {isOn ? (
           <HiChevronDoubleLeft className={styles.icon} />
@@ -37,6 +39,6 @@ export function Legend() {
           </li>
         </ul>
       </section>
-    </>
+    </div>
   );
 }

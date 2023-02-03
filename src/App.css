@@ -21,11 +21,11 @@ body {
   --dark-green: #0e7531;
   --light-green: #4eae49;
   --dark-gray: #595959;
-  --mid-gray:#d2d6dd;
-  --light-gray:#f6f7f8;
+  --mid-gray: #d2d6dd;
+  --light-gray: #f6f7f8;
   --blue: #4678b2;
-  --danger:#cd3439;
-  --orange:#eb9e3e;
+  --danger: #cd3439;
+  --orange: #eb9e3e;
 
   color: var(--dark-gray);
   background-color: #ffffff;
@@ -39,6 +39,11 @@ button {
   cursor: pointer;
   font-family: inherit;
   color: inherit;
+}
+
+/* prevents inner button elements from being target eg. svg */
+button > * {
+  pointer-events: none;
 }
 
 li {
