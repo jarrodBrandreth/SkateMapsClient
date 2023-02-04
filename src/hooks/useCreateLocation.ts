@@ -22,7 +22,7 @@ export const useCreateLocation = () => {
     }
 
     try {
-      const response = await fetch('/api/locations/', {
+      const response = await fetch(`${process.env.REACT_APP_API}/locations/`, {
         method: 'POST',
         body: JSON.stringify(location),
         headers: {

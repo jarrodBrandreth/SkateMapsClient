@@ -25,7 +25,7 @@ export function LocationsProvider({ children }: LocationsProviderProps) {
   const fetchLocations = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('/api/locations/');
+      const response = await fetch(`${process.env.REACT_APP_API}/locations/`);
       const result = await response.json();
       if (response.ok) {
         setLocations(result);

@@ -22,7 +22,7 @@ export const useDeleteLocation = () => {
     }
 
     try {
-      const response = await fetch(`/api/locations/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API}/locations/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

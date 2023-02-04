@@ -22,7 +22,7 @@ export const useEditLocation = () => {
     }
 
     try {
-      const response = await fetch(`/api/locations/${location._id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API}/locations/${location._id}`, {
         method: 'PATCH',
         body: JSON.stringify(location),
         headers: {
