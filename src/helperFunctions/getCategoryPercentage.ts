@@ -6,5 +6,8 @@ export const getCategoryPercentage = (locations: LocationType[], category: Categ
     if (curr.category === category) return acc + 1;
     return acc;
   }, 0);
-  return (numOfCategoryType / numOfLocations) * 100;
+
+  const percentageNum = (numOfCategoryType / numOfLocations) * 100;
+  if (Number.isNaN(percentageNum)) return 0;
+  return percentageNum;
 };
