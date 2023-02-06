@@ -9,19 +9,18 @@ import { Accordion } from '../Accordion';
 import styles from './LocationsStats.module.css';
 
 interface LocationsStatsProps {
-  className?: string;
   locations: LocationType[];
   startingState: boolean;
 }
 
-export function LocationsStats({ className, locations, startingState }: LocationsStatsProps) {
+export function LocationsStats({ locations, startingState }: LocationsStatsProps) {
   const totalLocations = locations.length;
   const shopsPercentage = getCategoryPercentage(locations, 'shop');
   const spotsPercentage = getCategoryPercentage(locations, 'spot');
   const skateparkPercentage = getCategoryPercentage(locations, 'skatepark');
 
   return (
-    <Accordion className={className} title="Statistics" startingState={startingState}>
+    <Accordion title="Statistics" startingState={startingState}>
       <ul className={styles.list_container}>
         <li className={styles.list_item}>
           <span className={styles.title}>

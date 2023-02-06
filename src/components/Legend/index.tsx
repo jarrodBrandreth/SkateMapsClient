@@ -1,5 +1,4 @@
-import React from 'react';
-import { useOnOff } from '../../hooks/useOnOff';
+import React, { useState } from 'react';
 import LocationIcon from '../../assets/location.svg';
 import ShopIcon from '../../assets/shop.svg';
 import SkateparkIcon from '../../assets/skater.svg';
@@ -10,19 +9,19 @@ import styles from './Legend.module.css';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 export function Legend() {
-  const { isOn, turnOff, toggle } = useOnOff(false);
-  const ref = useOutsideClick(turnOff);
+  const [open, setOpen] = useState(false);
+  const ref = useOutsideClick(() => setOpen(false));
 
   return (
     <div ref={ref}>
-      <Button className={styles.button} onClick={toggle}>
-        {isOn ? (
+      <Button className={styles.button} onClick={() => setOpen((open) => !open)}>
+        {open ? (
           <HiChevronDoubleLeft className={styles.icon} />
         ) : (
           <MdOutlineMap className={styles.icon} />
         )}
       </Button>
-      <section className={`${styles.legend_container} ${isOn && styles.opened} `}>
+      <section className={`${styles.legend_container} ${open && styles.opened} `}>
         <h3 className={styles.heading}>Legend</h3>
         <ul className={styles.list_container}>
           <li className={styles.list_item}>

@@ -5,7 +5,6 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 import { LocationPinPosition, LocationType } from '../../types/types';
 import { Rating } from '../Rating';
 import { ChooseCoordsMap } from '../ChooseCoordsMap';
-import { useOnOff } from '../../hooks/useOnOff';
 import { Button } from '../Button';
 import { latitudeMin, latitudeMax, longitudeMin, longitudeMax } from '../../globals';
 import { validateCoords } from '../../helperFunctions/validateCoords';
@@ -24,7 +23,7 @@ export function LocationForm({
   chooseDifferentLocation,
 }: LocationFormProps) {
   const { formState, formDispatch } = useLocationForm(location);
-  const { isOn: showCoordsMap, turnOn: toCoordsMap, turnOff: backToForm } = useOnOff(false);
+  const [showCoordsMap, setShowCoordsMap] = useState(false);
   const [error, setError] = useState<false | string>(false);
   const imageUrlInvalid = useMemo(
     () => formState.add_image_url.includes(' '),
@@ -37,7 +36,7 @@ export function LocationForm({
       lng: coords.lng.toString(),
     };
     formDispatch({ type: 'update coordinates', payload: payload });
-    backToForm();
+    setShowCoordsMap(false);
   };
 
   const preview = (e: React.FormEvent<HTMLFormElement>) => {
@@ -73,7 +72,7 @@ export function LocationForm({
         <ChooseCoordsMap
           previousLocation={formState.coordinates}
           updateWithCoords={updateWithCoords}
-          cancel={backToForm}
+          cancel={() => setShowCoordsMap(false)}
         />
       ) : (
         <>
@@ -143,7 +142,7 @@ export function LocationForm({
                 </select>
               </div>
 
-              <Button className={styles.use_map} onClick={() => toCoordsMap()}>
+              <Button className={styles.use_map} onClick={() => setShowCoordsMap(true)}>
                 <MdPushPin size="22px" /> use map pin
               </Button>
 

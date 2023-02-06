@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import styles from './Drawer.module.css';
 import {
   MdLocationPin,
@@ -7,7 +7,6 @@ import {
   MdClear,
   MdDirections,
 } from 'react-icons/md';
-import { useOnOff } from '../../hooks/useOnOff';
 import { Button } from '../Button';
 import { LocationType } from '../../types/types';
 import { DrawerContent } from '../DrawerContent';
@@ -17,7 +16,7 @@ interface DrawerProps {
 }
 
 export function Drawer({ location }: DrawerProps) {
-  const { isOn, turnOn, turnOff } = useOnOff(false);
+  const [open, setOpen] = useState(false);
   const googleLink = `https://www.google.com/maps/dir/?api=1&destination=${location?.coordinates.lat}%2C${location?.coordinates.lng}`;
   const LocationIcon = useMemo(() => {
     switch (location?.category) {
@@ -35,14 +34,14 @@ export function Drawer({ location }: DrawerProps) {
   if (!location) return <></>;
   return (
     <>
-      <Button className={styles.tab} onClick={turnOn}>
+      <Button className={styles.tab} onClick={() => setOpen(true)}>
         {LocationIcon}
       </Button>
-      <section className={`${styles.container} ${isOn && styles.opened}`}>
+      <section className={`${styles.container} ${open && styles.opened}`}>
         <header className={styles.heading}>
           {LocationIcon}
           <h3 className={styles.title}>{location.title}</h3>
-          <Button className={styles.close} onClick={turnOff}>
+          <Button className={styles.close} onClick={() => setOpen(false)}>
             <MdClear />
           </Button>
         </header>

@@ -34,7 +34,7 @@
     color: #ffffff;
     background-color: var(--dark-green);
     transform: scale(1.1);
-    transition: all 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out;
   }
 }
 

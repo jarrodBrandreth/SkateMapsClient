@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Map } from '../Map';
 import { MapMarker } from '../MapMarker';
 import { SearchBar } from '../SearchBar';
@@ -17,6 +17,10 @@ interface LocationsMapProps {
 export function LocationsMap({ locations, isLoading }: LocationsMapProps) {
   const [searchValue, setSearchValue] = useState('');
   const [currentLocation, setCurrentLocation] = useState<LocationType | null>(null);
+
+  useEffect(() => {
+    setCurrentLocation(null);
+  }, [locations]);
 
   const updateCurrentLocation = (id: string) => {
     const chosenLocation = locations.find((location) => location._id === id);
