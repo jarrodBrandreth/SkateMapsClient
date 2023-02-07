@@ -74,7 +74,7 @@ li {
   margin-bottom: 38px;
 }
 
-.leaflet-marker-icon:focus {
+#locations_map .leaflet-marker-icon:focus {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.8);
@@ -82,7 +82,7 @@ li {
 }
 
 @media (hover: hover) {
-  .leaflet-marker-icon:hover {
+  #locations_map .leaflet-marker-icon:hover {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.8);

@@ -40,7 +40,7 @@ export function ChooseLocationMap({
   };
 
   return (
-    <div className={styles.container}>
+    <div id="locations_map" className={styles.container}>
       <h2 className={styles.heading}>Choose A Location To {chooseLocation.name}</h2>
       <div className={styles.content}>
         <div className={styles.current_location}>

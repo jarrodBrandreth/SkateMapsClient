@@ -28,7 +28,7 @@ export function LocationsMap({ locations, isLoading }: LocationsMapProps) {
   };
 
   return (
-    <div className={styles.container}>
+    <div id="locations_map" className={styles.container}>
       {isLoading && <Loader />}
       <Legend />
       <Drawer location={currentLocation} />
