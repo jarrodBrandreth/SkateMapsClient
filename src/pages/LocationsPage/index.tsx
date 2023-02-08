@@ -46,9 +46,7 @@ export function LocationsPage() {
             style={{ width: '24px', verticalAlign: 'text-bottom' }}
           />{' '}
           some locations may be prohibited for skateboarding. Be respectful of the community and
-          follow local laws and by-laws. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Numquam modi, doloremque et quos dolorum labore. Nobis molestias ab itaque excepturi eius
-          reprehenderit sunt blanditiis qui? Dolorem amet porro cupiditate. Ipsa.
+          follow local laws and by-laws.
         </p>
       </Accordion>
       <LocationsMap locations={locations} isLoading={isLoading} />
