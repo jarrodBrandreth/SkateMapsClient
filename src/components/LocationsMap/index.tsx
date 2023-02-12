@@ -32,7 +32,7 @@ export function LocationsMap({ locations, isLoading }: LocationsMapProps) {
       {isLoading && <Loader />}
       <Legend />
       <Drawer location={currentLocation} />
-      <Map zoom={13} center={[40.741283667303954, -73.96788974139568]}>
+      <Map zoom={12} center={[40.75988687070933, -73.95313739776613]}>
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         {locations
           .filter((location) => applyFilters(location, searchValue))
